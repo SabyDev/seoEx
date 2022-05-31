@@ -1,0 +1,235 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* ------- BODY AND ELEMENTS ------- */
+body {
+background-color: white;
+margin: auto;
+min-width: 500px;
+}
+
+header {
+background-color: black;
+background: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bonprix.fr%2Fcategorie%2Ffemme-grandes-tailles%2F&psig=AOvVaw3GQrFvzpvBnglfafaG4rVa&ust=1654074829880000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNixnIizifgCFQAAAAAdAAAAABAE), rgba(50, 125, 175, 0.5);
+background-blend-mode: screen;
+background-position: center;
+background-size: cover;
+padding: 2rem;
+}
+
+main {
+background-color: white;
+}
+
+h1, h2, p {
+/* color: #77; */
+font-family: Tahoma;
+text-align: center;
+}
+
+h1 {
+font-size: 70px;
+padding: 30px;
+color: white;
+}
+
+h2 {
+font-size: 18px;
+font-weight: 400;
+opacity: .7;
+padding: 45px 0 2px;
+}
+
+.header-para {
+display: flex;
+font-size: 13.5px;
+opacity: .5;
+justify-content: center;
+padding: 0 0 25px;  
+}
+
+.header-para div {
+width: 25%;
+}
+
+.header-para p {
+width: auto;
+}
+
+/*
+ol {
+color: #748493;
+font-family: "Courier New";
+font-size: 1.4rem;  
+}
+*/
+
+a, a:hover, a:visited {
+color: inherit;
+}
+/* Changed the fontstyle to ilaics, rather than the "font-weight: bold" property because I couldn't remove the column-shift that kept occuring while on hover. I tried adopting the following method, but was unsuccessful in implementing it; reference: https://css-tricks.com/bold-on-hover-without-the-layout-shift/ */
+footer a:hover {
+font-style: italic;
+}
+
+button a:hover {
+font-weight: 700;
+}
+
+/* I understand that "display: flex" and "position: absolute" are not usually put together. However, the absolute positioning was necessary in order to keep the text properly positioned within their relative-positioned parent container("img-tran"). This caused problems with center the flexbox, as the asbolute positioning was voiding all flexbox properties; however, I managed to find a way of centering it using "align-self: center" property. For reference, this is the source that aided in bringing me to this conclusion: https://chenhuijing.com/blog/flexbox-and-absolute-positioning/  */
+.img-tran p {
+align-self: center;
+display: flex;
+color: rgba(0, 0, 0, .85);
+flex-direction: column;
+font-size: 1rem;
+font-weight: 700;
+letter-spacing: .05rem;
+opacity: 0;
+position: absolute;
+width: 75%;
+z-index: 0;
+}
+
+.joke {
+color: rgba(0, 0, 0, .8);
+font-size: .85rem;
+font-weight: 500;
+padding: 15px;
+}
+
+.button-container {
+display: flex;
+justify-content: center;
+}
+
+.learn-more-btn {
+background-color: rgba(50, 125, 175, 0.75);
+/* 
+background-color: #2F91FB; 
+border-radius: 25px;
+*/
+border: none;
+color: white;
+font-size: 25px;
+margin: 25px 0 75px;
+padding: 10px 20px;
+}
+
+/* ------- FOOTER ELEMENTS ------- */
+footer {
+display: block;
+background-color: rgb(105, 105, 105);
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: 30% 30% 30%;
+grid-template-rows: 1fr;
+justify-content: center;
+}
+
+.info-column {
+align-items: center;
+color: rgba(255, 255, 255, .7);
+display: flex;
+flex-direction: column;
+padding: 45px;
+text-align: left;
+}
+
+ul {
+list-style-type: none;
+padding: 0;
+text-align: left;
+}
+
+li a {
+letter-spacing: .05rem;
+min-width: 90px;
+}
+
+footer li:nth-child(1) {
+color: rgba(255, 255, 255, .5);
+font-size: 12px;
+text-transform: uppercase;
+}
+
+/* ------- IMAGES IN MAIN CONTENT ------- */
+.gallery-container {
+background-color: inherit;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: 290px 1fr 290px;
+margin: auto;
+max-width: 1100px;
+padding: 10px;
+}
+
+img {
+max-height: 490px;
+max-width: 500px;
+object-fit: cover;
+padding: 10px;
+}
+
+.img-block-top, 
+.img-block-middle, 
+.img-block-bottom {
+display: flex;
+justify-content: center;
+display: flex;
+}
+
+.img-tran {
+display: flex;
+justify-content: center;
+object-fit: cover;
+position: relative;
+}
+
+.img-wrap {
+max-height: 290px;
+max-width: 580px; 
+width: 50%;
+}
+
+.img-wrap-center {
+width: 40%; 
+}
+
+.img-wrap-outer {
+width: 30%; 
+}
+
+.top-img,
+.bottom-img {
+max-height: 290px;
+max-width: 580px;
+width: 100%;
+}
+
+.center-img,
+.outer-img { 
+width: 100%;
+}
+
+main img:hover {
+filter: blur(1.5px);
+padding: 3px;
+
+}
+.img-tran:hover p {
+opacity: 1;
+}
+
+.img-tran * {
+transition: all 0.45s ease;
+}
+
+.img-tran:hover img {
+opacity: .5;
+}
